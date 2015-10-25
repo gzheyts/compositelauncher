@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+    <extension
+            point="org.eclipse.debug.core.launchConfigurationTypes">
+        <launchConfigurationType
+                name="%compositeLaunchConfigurationTypeName"
+                delegate="org.eclipse.debug.launching.composite.CompositeLaunchConfigurationDelegate"
+                modes="run"
+                id="org.eclipse.debug.launching.CompositeConfigurationType"
+                sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+                sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
+        </launchConfigurationType>
+    </extension>
+
+    <extension
+            point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup
+                type="org.eclipse.debug.launching.CompositeConfigurationType"
+                class="org.eclipse.debug.launching.composite.CompositeLaunchTabGroup"
+                id="org.eclipse.debug.launching.composite.CompositeTabGroup">
+        </launchConfigurationTabGroup>
+    </extension>
+
+    <extension
+            point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+        <launchConfigurationTpeImage
+                icon="icons/composite.gif"
+                configTypeID="org.eclipse.debug.launching.CompositeConfigurationType"
+                id="org.eclipse.debug.launching.image.Composite">
+        </launchConfigurationTpeImage>
+    </extension>
+
+</plugin>
